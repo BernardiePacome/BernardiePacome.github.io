@@ -1,7 +1,6 @@
 import adapter from '@sveltejs/adapter-auto';
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import sveltePreprocess from 'svelte-preprocess';
-
+import { svelte, vitePreprocess } from "@sveltejs/vite-plugin-svelte";
+import sveltePreprocess from "svelte-preprocess";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -18,8 +17,8 @@ const config = {
     paths: {
       base:
         process.env.NODE_ENV === "production"
-          ? "/BernardiePacome.github.io"
-          : "",
+          ? "/BernardiePacome.github.io/"
+          : "/",
     },
   },
 };
