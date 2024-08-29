@@ -3,7 +3,7 @@
   import PlaylistConverter from "../../components/playlist-converter.svelte";
   import PlaylistEditor from "../../components/playlist-editor.svelte";
   import PlaylistTextFormatter from "../../components/playlist-text-formatter.svelte";
-  import "../styles/global.scss";
+  import "../../styles/global.scss";
   import {
     Accordion,
     AccordionItem,
