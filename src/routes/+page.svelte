@@ -1,9 +1,8 @@
 <script lang="ts">
-  import { onMount, setContext } from "svelte";
+  import { setContext } from "svelte";
   import PlaylistConverter from "../components/playlist-converter.svelte";
   import PlaylistEditor from "../components/playlist-editor.svelte";
   import PlaylistTextFormatter from "../components/playlist-text-formatter.svelte";
-  import type { DJSetTrackList } from "../interfaces/module/DjSetTrackList.interface";
   import "../styles/global.scss";
   import {
     Accordion,
