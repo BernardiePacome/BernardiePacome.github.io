@@ -1,13 +1,12 @@
 import adapter from "@sveltejs/adapter-auto";
-import { svelte, vitePreprocess } from "@sveltejs/vite-plugin-svelte";
+import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import sveltePreprocess from "svelte-preprocess";
-import adapter from "@sveltejs/adapter-static";
+/** @type {import('@sveltejs/kit').Config} */
+const config = {	
+	preprocess: vitePreprocess(),
 
-const config = {
   kit: {
-    adapter: adapter({
-      fallback: "404.html",
-    }),
+    adapter: adapter(),
     paths: {
       base: process.argv.includes("dev") ? "" : process.env.BASE_PATH,
     },
