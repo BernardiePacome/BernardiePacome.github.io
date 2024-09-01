@@ -35,6 +35,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: male 'build' directory
+        run: mkdir build
 
       - name: Publish github pages
         run: |
