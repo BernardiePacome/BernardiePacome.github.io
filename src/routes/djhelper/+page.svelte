@@ -10,10 +10,9 @@
     Styles,
     Theme,
   } from "@sveltestrap/sveltestrap";
-    import { AppStore } from "../../store/playlist-store";
+  import { AppStore } from "../../store/playlist-store";
 
-setContext("appStore", new AppStore());
-
+  setContext("appStore", new AppStore());
 </script>
 
 <!-- svelteStrap import -->
@@ -45,7 +44,6 @@ setContext("appStore", new AppStore());
   }
   body {
     height: 100%;
-    
   }
   #svelte {
     height: 100%;
