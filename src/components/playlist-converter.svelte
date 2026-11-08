@@ -3,7 +3,10 @@
   // This is the script for the drag and drop box
   // It will be used to handle the drag and drop events
   import Dropzone from "svelte-file-dropzone";
-  import type { DJSetTrackList, SetTrack } from "../interfaces/module/DjSetTrackList.interface";
+  import type {
+    DJSetTrackList,
+    SetTrack,
+  } from "../interfaces/module/DjSetTrackList.interface";
   import { AppStore } from "../store/playlist-store";
   import { getContext, onMount } from "svelte";
   import _ from "lodash/fp";
@@ -44,11 +47,13 @@
   /**
    * This function will compare two tracks and return true if they are the same
    * a track is the same if both their title and artist are the same
-  */
-  function trackComparatorFunction(track1: SetTrack, track2: SetTrack) : boolean {
+   */
+  function trackComparatorFunction(
+    track1: SetTrack,
+    track2: SetTrack,
+  ): boolean {
     return track1.title === track2.title && track1.artist === track2.artist;
   }
-    
 
   function handleConvertCueFile(cueFileText: string): void {
     // reinitialize the playlist
@@ -83,10 +88,13 @@
 
       newPlaylist.tracks.push({ title, artist, playTime });
     }
-    newPlaylist.tracks = _.uniqWith(trackComparatorFunction, newPlaylist.tracks);
+    newPlaylist.tracks = _.uniqWith(
+      trackComparatorFunction,
+      newPlaylist.tracks,
+    );
     appStore.setPlaylist(newPlaylist);
   }
-    // dispatch event to other components
+  // dispatch event to other components
 </script>
 
 <div class="playlist-converter-container">
@@ -102,9 +110,8 @@
 {/if}
 
 <style lang="scss">
-
   /* The page is a 100% width and height container with a 10px padding dark grey */
-  
+
   :global(.dropzone) {
     background: black !important;
   }

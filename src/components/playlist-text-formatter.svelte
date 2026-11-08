@@ -39,7 +39,9 @@
       bind:value={formattedText}
     ></textarea>
     <span class="mt-2">
-      <Button color="primary" on:click={copyToClipboard}>Copy to Clipboard</Button>
+      <Button color="primary" on:click={copyToClipboard}
+        >Copy to Clipboard</Button
+      >
       <Button on:click={() => appStore.clearPlaylist()}>Clear Playlist</Button>
     </span>
   {/if}
